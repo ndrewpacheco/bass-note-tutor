@@ -2,13 +2,7 @@ import logo from "./logo.svg";
 import * as Tone from "tone";
 import BassNeck from "./components/BassNeck";
 import "./App.css";
-
-// const bassStrings = [
-//   ["E1", "F1", "F#1", "G1", "G#1"],
-//   ["A1", "A#1", "B1", "C2", "C#2"],
-//   ["D2", "D#2", "E2", "F2", "F#2"],
-//   ["G2", "G#2", "A2", "A#2", "B2"],
-// ];
+import String from "./components/String";
 
 function App() {
   return <BassNeck />;
