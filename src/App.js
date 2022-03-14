@@ -2,10 +2,15 @@ import logo from "./logo.svg";
 import * as Tone from "tone";
 import BassNeck from "./components/BassNeck";
 import "./App.css";
-import String from "./components/String";
+import Staff from "./components/Staff";
 
 function App() {
-  return <BassNeck />;
+  return (
+    <div className='wrapper'>
+      <Staff />
+      <BassNeck />
+    </div>
+  );
 }
 
 // function App() {

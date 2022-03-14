@@ -1,9 +1,26 @@
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 50px;
+}
+.staff {
+  height: 50%;
+  width: 100%;
+  border: 2px dashed salmon;
+}
 .bassNeck {
   display: grid;
   grid-template-rows: repeat(4, 1fr);
   background-color: beige;
-  border: 3px solid black;
-  max-width: 900px;
+  border: 1.5px solid gray;
+  border-left: none;
+
+  /* box-shadow: inset; */
+  border-radius: 5px;
+  /* max-width: 40rem; */
+  width: 100%;
 }
 
 .string {
@@ -16,7 +33,7 @@
 .fret {
   position: relative;
   width: 100%;
-  height: 100px;
+  height: 5rem;
   display: flex;
   align-items: center;
 }
@@ -25,25 +42,35 @@
   border-left: 1px solid black;
   border-right: 1px solid black;
   background-color: rgb(152, 148, 148);
-  width: 6px;
+  width: 5px;
   height: 100%;
   z-index: 1;
-  box-shadow: 2px 0px 1px 0px #dbdddd;
+  /* box-shadow: 2px 0px 1px 0px #dbdddd; */
 }
 
 .nut {
   background-color: white;
-  width: 12px;
+  width: 16px;
+  /* box-shadow: 2px 0px 0px 0px #616363; */
 }
 
 .note {
   padding: 4px;
+  margin-left: 4px;
   text-align: center;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   position: absolute;
   background-color: #d8d8d8;
   /* box-shadow: 0px 1px 2px 0px #3c3e3e; */
+  box-shadow: 0px 3px 2px -3px #565b57, 0px -3px 2px -3px #565b57;
+
   width: 100%;
   z-index: 2;
+  cursor: pointer;
+}
+
+.note:hover {
+  background-color: rgb(216, 112, 112);
+  /* opacity: 0.2; */
 }

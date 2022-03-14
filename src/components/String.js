@@ -1,4 +1,5 @@
 import React from "react";
+import Note from "./Note";
 
 const String = (props) => {
   // console.log(props.notes);
@@ -11,7 +12,7 @@ const String = (props) => {
             <div
               className={note === lastNote ? "fret-marker nut" : "fret-marker"}
             />
-            <div className='note'>{note}</div>
+            <Note letter={note} />
           </div>
         );
       })}
