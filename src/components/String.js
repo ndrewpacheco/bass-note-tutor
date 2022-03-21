@@ -12,7 +12,7 @@ const String = (props) => {
             <div
               className={note === lastNote ? "fret-marker nut" : "fret-marker"}
             />
-            <Note letter={note} />
+            <Note letter={note} stringNumber={props.stringNumber} />
           </div>
         );
       })}

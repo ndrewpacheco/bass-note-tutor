@@ -1,5 +1,4 @@
 import React from "react";
-import Fret from "./Fret";
 import String from "./String";
 
 export default function BassNeck() {
@@ -20,8 +19,8 @@ export default function BassNeck() {
 
   return (
     <div className='bassNeck'>
-      {bassStrings.map((string) => {
-        return <String notes={string.reverse()} />;
+      {bassStrings.map((string, idx) => {
+        return <String notes={string.reverse()} stringNumber={idx + 1} />;
       })}
     </div>
   );

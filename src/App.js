@@ -1,13 +1,14 @@
-import logo from "./logo.svg";
-import * as Tone from "tone";
+import React from "react";
 import BassNeck from "./components/BassNeck";
 import "./App.css";
 import Staff from "./components/Staff";
 
+const CurrentNoteContext = React.createContext("");
 function App() {
   return (
     <div className='wrapper'>
-      <Staff />
+      <Staff letter='A1' />
+
       <BassNeck />
     </div>
   );
