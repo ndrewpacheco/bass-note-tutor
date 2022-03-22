@@ -1,59 +1,76 @@
 import React, { useEffect } from "react";
-import Vex from "vexflow";
+import findBassClefNote from "../findBassClefNote";
 
-const Staff = (props) => {
+const Staff = ({ currentNote }) => {
   useEffect(() => {
-    function findVexNote(val) {
-      const VF = Vex.Flow;
-      // Create an SVG renderer and attach it to the DIV element named "boo".
-      const div = document.getElementById("test");
-      const renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
+    // function findBassClefNote(letter) {
+    //   let num = letter.slice(-1);
+    //   num = parseInt(num) + 1;
+    //   letter = letter.slice(0, -1);
 
-      // Size our SVG:
-      renderer.resize(500, 500);
+    //   letter = letter + "/" + num;
+    //   const VF = Vex.Flow;
+    //   // Create an SVG renderer and attach it to the DIV element named "boo".
+    //   const div = document.getElementById("staff");
+    //   const renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
 
-      // And get a drawing context:
-      const context = renderer.getContext();
-      // Create a stave at position 10, 40 of width 400 on the canvas.
-      const stave = new VF.Stave(150, 60, 140);
+    //   // Size our SVG:
+    //   // renderer.resize(100, 100);
 
-      // Add a clef and time signature.
-      stave.addClef("bass");
+    //   // And get a drawing context:
+    //   const context = renderer.getContext();
 
-      const note = new VF.StaveNote({
-        clef: "bass",
-        keys: [val],
-        duration: "w",
-      });
-      if (val[1] === "#") {
-        note.addAccidental(0, new VF.Accidental("#"));
-      }
+    //   // Create a stave at position 10, 40 of width 400 on the canvas.
+    //   const stave = new VF.Stave(0, 0, 100);
 
-      // Create a voice in 4/4 and add the fotes from above
-      const voice = new VF.Voice({ num_beats: 4, beat_value: 4 });
-      voice.addTickables([note]);
+    //   // Add a clef and time signature.
+    //   stave.addClef("bass");
 
-      // Format and justify the notes to 350 pixels (50 pixels left for key and time signatures).
-      new VF.Formatter().joinVoices([voice]).format([voice]);
+    //   const note = new VF.StaveNote({
+    //     clef: "bass",
+    //     keys: [letter],
+    //     duration: "w",
+    //   });
+    //   if (letter[1] === "#") {
+    //     note.addAccidental(0, new VF.Accidental("#"));
+    //   }
 
-      // Render voice
-      voice.draw(context, stave);
+    //   // Create a voice in 4/4 and add the fotes from above
+    //   const voice = new VF.Voice({ num_beats: 4, beat_value: 4 });
+    //   voice.addTickables([note]);
 
-      // Connect it to the rendering context and draw!
-      stave.setContext(context).draw();
-      return div;
-    }
+    //   // Format and justify the notes to 350 pixels (50 pixels left for key and time signatures).
+    //   new VF.Formatter().joinVoices([voice]).format([voice]);
 
-    function showStaffNote(letter) {
-      let num = letter.slice(-1);
-      num = parseInt(num) + 1;
-      letter = letter.slice(0, -1);
-      return findVexNote(letter + "/" + num);
-    }
+    //   // Render voice
+    //   voice.draw(context, stave);
 
-    showStaffNote(props.letter);
-  }, []);
-  return <div id='test'></div>;
+    //   // Connect it to the rendering context and draw!
+    //   stave.setContext(context).draw();
+    // }
+
+    // function showStaffNote(letter) {
+    //   let num = letter.slice(-1);
+    //   num = parseInt(num) + 1;
+    //   letter = letter.slice(0, -1);
+
+    //   return findBassClefNote(letter + "/" + num);
+    // }
+
+    findBassClefNote(currentNote, "staff");
+
+    return () => {
+      document.getElementById("staff").innerHTML = "";
+    };
+  });
+
+  return (
+    <div>
+      <h2>your note:</h2>
+      <p>{currentNote}</p>
+      <div id='staff'></div>
+    </div>
+  );
 };
 
 export default Staff;

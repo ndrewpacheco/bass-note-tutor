@@ -1,8 +1,6 @@
 import React from "react";
-import Note from "./Note";
 
-const String = (props) => {
-  // console.log(props.notes);
+export default function Notes(props) {
   const lastNote = props.notes[props.notes.length - 1];
   return (
     <div className='string'>
@@ -12,12 +10,14 @@ const String = (props) => {
             <div
               className={note === lastNote ? "fret-marker nut" : "fret-marker"}
             />
-            <Note letter={note} stringNumber={props.stringNumber} />
+            <div className={`note string-number-${props.stringNumber}`}>
+              <div className='letter' onMouseDown={props.handleMouseDown}>
+                {note}
+              </div>
+            </div>
           </div>
         );
       })}
     </div>
   );
-};
-
-export default String;
+}

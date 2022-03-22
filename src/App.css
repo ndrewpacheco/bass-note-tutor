@@ -1,20 +1,18 @@
 .wrapper {
-  /* border: 1px solid green; */
+  border: 1px solid green;
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  /* padding: 20px; */
+
   margin: 0 auto;
   max-width: 900px;
 }
 
 #staff {
-  height: 50%;
-  width: 100%;
-  border: 2px dashed salmon;
+  /* border: 2px dashed salmon; */
 }
 
 .bassNeck {
@@ -77,16 +75,14 @@
   padding: 9px;
 }
 
-/* .string-number-1 {
-  padding: 7px 0;
+#staff svg {
+  /* border: 1px seagreen solid; */
 }
 
-.string-number-2 {
-  padding: 7px 0;
+.quiz {
+  /* border: 1px blueviolet solid; */
 }
-.string-number-3 {
-  padding: 5px 0;
+
+.top-part {
+  display: flex;
 }
-.string-number-4 {
-  padding: 3px 0;
-} */
