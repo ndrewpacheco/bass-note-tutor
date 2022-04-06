@@ -7,7 +7,7 @@ export default function findBassClefNote(letter, id) {
   const renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
 
   // Size our SVG:
-  // renderer.resize(100, 100);
+  renderer.resize(100, 100);
 
   // And get a drawing context:
   const context = renderer.getContext();
@@ -17,9 +17,8 @@ export default function findBassClefNote(letter, id) {
 
   // Add a clef and time signature.
   stave.addClef("bass");
-
+  console.log(letter);
   if (letter.length > 0) {
-    console.log(letter);
     let num = letter.slice(-1);
     num = parseInt(num) + 1;
     letter = letter.slice(0, -1);

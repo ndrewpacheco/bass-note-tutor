@@ -60,14 +60,14 @@ const Staff = ({ currentNote }) => {
     findBassClefNote(currentNote, "staff");
 
     return () => {
-      document.getElementById("staff").innerHTML = "";
+      document.getElementById("staff").innerText = "";
     };
   });
 
   return (
-    <div>
+    <div className='quiz-note'>
       <h2>your note:</h2>
-      <p>{currentNote}</p>
+      {/* <p>The note you played is: {currentNote}</p> */}
       <div id='staff'></div>
     </div>
   );

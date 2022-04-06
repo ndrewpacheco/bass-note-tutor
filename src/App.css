@@ -1,18 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap");
+
+body {
+  font-family: "Barlow", sans-serif;
+}
 .wrapper {
-  border: 1px solid green;
   height: 100vh;
+  max-height: 750px;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 
   margin: 0 auto;
   max-width: 900px;
-}
-
-#staff {
-  /* border: 2px dashed salmon; */
 }
 
 .bassNeck {
@@ -22,6 +23,7 @@
   border: 1.5px solid gray;
   border-left: none;
   border-radius: 5px;
+
   width: 100%;
 }
 
@@ -35,7 +37,9 @@
 .fret {
   position: relative;
   width: 100%;
-  height: 5rem;
+  height: 100%;
+  min-height: 80px;
+  max-height: 200px;
   display: flex;
   align-items: center;
 }
@@ -72,17 +76,47 @@
 }
 
 .letter {
-  padding: 9px;
+  padding: 1em;
+  padding-left: 0;
 }
 
-#staff svg {
-  /* border: 1px seagreen solid; */
-}
-
-.quiz {
-  /* border: 1px blueviolet solid; */
-}
-
-.top-part {
+.quiz-note {
   display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.quiz-note h2 {
+  margin: 0;
+}
+
+.quiz-section {
+  display: flex;
+
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 1em;
+}
+/* @media (max-width: 700px) {
+  .title {
+    display: none;
+  }
+} */
+@media (max-height: 575px) {
+  .title {
+    display: none;
+  }
+
+  .quiz-note {
+    flex-direction: row;
+    padding: 0;
+  }
+}
+
+@media (max-height: 400px) {
+  .quiz-note,
+  .title {
+    display: none;
+  }
 }

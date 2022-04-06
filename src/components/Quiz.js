@@ -1,33 +1,38 @@
 import React, { useEffect } from "react";
 import findBassClefNote from "../findBassClefNote";
 
-const Quiz = ({ currentNote }) => {
-  let quizNote = "E1";
-  let answer = "....";
+const Quiz = ({ currentNote, quizNote, newNoteHandler }) => {
+  let answer = "....waiting....";
 
   useEffect(() => {
     findBassClefNote(quizNote, "quiz");
 
     return () => {
-      document.getElementById("quiz").innerHTML = "";
+      document.getElementById("quiz").firstChild.remove();
     };
-  }, [currentNote, quizNote]);
-
-  const nopes = ["nope", "not yet", "nah"];
+  }, [quizNote]);
 
   if (currentNote) {
     answer =
       currentNote === quizNote ? (
-        <p>yep</p>
+        <div>yep, it's {currentNote}</div>
       ) : (
-        <p>{nopes[Math.floor(Math.random() * nopes.length)]}</p>
+        <div>{currentNote} is the wrong note</div>
       );
   }
+
   return (
-    <div className='quiz'>
-      <h2>play this note:</h2>
-      <p>{answer}</p>
+    <div className='quiz-note'>
+      <h2>guess this note:</h2>
       <div id='quiz'></div>
+      <p>{answer}</p>
+      <button
+        onClick={newNoteHandler}
+        type='button'
+        disabled={currentNote !== quizNote}
+      >
+        New Note
+      </button>
     </div>
   );
 };
