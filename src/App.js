@@ -8,12 +8,11 @@ import E1 from "./assets/bass-samples/e2.wav";
 import Quiz from "./components/Quiz";
 
 function App() {
-  // refactor this
   const bassStrings = [
-    ["E1", "F1", "F#1", "G1", "G#1"].reverse(),
-    ["A1", "A#1", "B1", "C2", "C#2"].reverse(),
-    ["D2", "D#2", "E2", "F2", "F#2"].reverse(),
-    ["G2", "G#2", "A2", "A#2", "B2"].reverse(),
+    ["G#1", "G1", "F#1", "F1", "E1"],
+    ["C#2", "C2", "B1", "A#1", "A1"],
+    ["F#2", "F2", "E2", "D#2", "D2"],
+    ["B2", "A#2", "A2", "G#2", "G2"],
   ];
   const allNotes = [].concat.apply([], bassStrings);
 
