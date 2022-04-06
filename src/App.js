@@ -32,7 +32,7 @@ function App() {
     }
   ).toDestination();
 
-  const handleMouseDown = (event) => {
+  const handleClick = (event) => {
     event.preventDefault();
     setCurrentNote(event.target.innerText);
 
@@ -57,7 +57,7 @@ function App() {
         />
         <Staff currentNote={currentNote} />
       </div>
-      <BassNeck handleMouseDown={handleMouseDown} bassStrings={bassStrings} />
+      <BassNeck handleClick={handleClick} bassStrings={bassStrings} />
     </div>
   );
 }
