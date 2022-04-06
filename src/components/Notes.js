@@ -11,7 +11,11 @@ export default function Notes(props) {
               className={note === lastNote ? "fret-marker nut" : "fret-marker"}
             />
             <div className={`note string-number-${props.stringNumber}`}>
-              <div className='letter' onClick={props.handleClick}>
+              <div
+                className='letter'
+                onTouchStart={props.handleClick}
+                onClick={props.handleClick}
+              >
                 {note}
               </div>
             </div>
