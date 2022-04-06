@@ -16,7 +16,8 @@ export default function BassNeck(props) {
       {props.bassStrings.map((bassString, idx) => {
         return (
           <Notes
-            notes={bassString.reverse()}
+            // notes={bassString.reverse()}
+            notes={bassString}
             stringNumber={idx + 1}
             handleMouseDown={props.handleMouseDown}
           />
