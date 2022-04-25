@@ -13,8 +13,8 @@ export default function Notes(props) {
             <div className={`note string-number-${props.stringNumber}`}>
               <div
                 className='letter'
-                onTouchStart={props.handleClick}
-                onClick={props.handleClick}
+                // onTouchStart={props.handleClick}
+                onMouseDown={props.handleClick}
               >
                 {note}
               </div>

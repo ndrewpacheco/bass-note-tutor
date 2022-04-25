@@ -34,6 +34,9 @@ body {
   justify-items: center;
 }
 
+.title {
+  text-align: center;
+}
 .fret {
   position: relative;
   width: 100%;
@@ -98,11 +101,11 @@ body {
   width: 100%;
   margin-bottom: 1em;
 }
-/* @media (max-width: 700px) {
-  .title {
-    display: none;
-  }
-} */
+
+.color {
+  color: "blue";
+}
+
 @media (max-height: 575px) {
   .title {
     display: none;

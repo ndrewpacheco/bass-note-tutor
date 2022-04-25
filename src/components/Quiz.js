@@ -10,7 +10,7 @@ const Quiz = ({ currentNote, quizNote, newNoteHandler }) => {
     return () => {
       document.getElementById("quiz").firstChild.remove();
     };
-  }, [quizNote]);
+  }, [quizNote, currentNote]);
 
   if (currentNote) {
     answer =

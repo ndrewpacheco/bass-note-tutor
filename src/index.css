@@ -12,16 +12,6 @@ code {
     monospace;
 }
 
-/* body {
-  display: flex;
+.color {
+  color: "blue";
 }
-.bassNeck {
-  display: flex;
-}
-
-.note {
-  display: block;
-  min-width: 100px;
-  min-height: 100px;
-  border: 1px solid black;
-} */
