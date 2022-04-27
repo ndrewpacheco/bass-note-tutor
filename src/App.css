@@ -1,19 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
 body {
-  font-family: "Barlow", sans-serif;
+  font-family: "Lato", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0.2em 0;
 }
 .wrapper {
   height: 100vh;
-  max-height: 750px;
+  max-height: 1000px;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  font-size: 14px;
   margin: 0 auto;
   max-width: 900px;
+  min-width: 320px;
 }
 
 .bassNeck {
@@ -23,7 +30,6 @@ body {
   border: 1.5px solid gray;
   border-left: none;
   border-radius: 5px;
-
   width: 100%;
 }
 
@@ -37,12 +43,12 @@ body {
 .title {
   text-align: center;
 }
+
 .fret {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 80px;
-  max-height: 200px;
+  min-height: 60px;
   display: flex;
   align-items: center;
 }
@@ -66,7 +72,7 @@ body {
   text-align: center;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-
+  border-left: 1px solid #c6c4c4;
   background-color: #d8d8d8;
   box-shadow: 0px 3px 2px -3px #565b57, 0px -3px 2px -3px #565b57;
   width: 100%;
@@ -75,51 +81,155 @@ body {
 }
 
 .note:hover {
-  background-color: rgb(216, 112, 112);
+  background-color: rgb(92, 91, 91);
 }
 
 .letter {
-  padding: 1em;
+  padding: 0.5em 1em;
   padding-left: 0;
+}
+
+.letter-circle {
+  display: inline-block;
+  color: green;
+  font-weight: bold;
+  border: 2px solid green;
+  min-width: 32px;
+  /* min-height: 32px; */
+  padding: 5px 1px;
+  border-radius: 100%;
+  margin-left: 10px;
+
+  background-color: white;
+}
+.notes {
+  display: flex;
+  justify-content: space-evenly;
+}
+.quiz-section {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1em;
+  width: 95%;
+  max-width: 400px;
+  margin-bottom: 1em;
 }
 
 .quiz-note {
   display: flex;
   flex-direction: column;
-
-  align-items: center;
 }
 
 .quiz-note h2 {
   margin: 0;
 }
 
-.quiz-section {
-  display: flex;
-
-  justify-content: space-evenly;
-  width: 100%;
-  margin-bottom: 1em;
-}
-
 .color {
   color: "blue";
 }
 
-@media (max-height: 575px) {
+.answer-section {
+  font-size: 1.1rem;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.answer-section button {
+  padding: 1em 1.5em;
+  background-color: rgb(38, 202, 38);
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  outline: solid 0.5px rgb(74, 250, 74);
+}
+
+.answer-section button:disabled {
+  background-color: #d8d8d8;
+  outline: none;
+}
+
+.accidentals {
+  align-self: flex-end;
+  margin: 0.5em 2em;
+  font-size: 1.1rem;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: green;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: blueviolet;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px blueviolet;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* .is-flat {
+  background-color: blueviolet;
+  border-color: blueviolet;
+} */
+@media (max-height: 600px) {
   .title {
     display: none;
   }
 
   .quiz-note {
-    flex-direction: row;
     padding: 0;
-  }
-}
-
-@media (max-height: 400px) {
-  .quiz-note,
-  .title {
-    display: none;
   }
 }

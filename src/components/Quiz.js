@@ -1,38 +1,47 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import findBassClefNote from "../findBassClefNote";
-
+import Staff from "./Staff";
 const Quiz = ({ currentNote, quizNote, newNoteHandler }) => {
+  const [isCorrect, setIsCorrect] = useState(false);
+
   let answer = "....waiting....";
 
   useEffect(() => {
     findBassClefNote(quizNote, "quiz");
-
+    setIsCorrect(currentNote === quizNote);
     return () => {
       document.getElementById("quiz").firstChild.remove();
     };
   }, [quizNote, currentNote]);
 
   if (currentNote) {
-    answer =
-      currentNote === quizNote ? (
-        <div>yep, it's {currentNote}</div>
-      ) : (
-        <div>{currentNote} is the wrong note</div>
-      );
+    answer = isCorrect ? (
+      <div style={{ color: "green" }}>Correct, it's {currentNote}</div>
+    ) : (
+      <div style={{ color: "red" }}>{currentNote} is the wrong note</div>
+    );
   }
 
   return (
-    <div className='quiz-note'>
-      <h2>guess this note:</h2>
-      <div id='quiz'></div>
-      <p>{answer}</p>
-      <button
-        onClick={newNoteHandler}
-        type='button'
-        disabled={currentNote !== quizNote}
-      >
-        New Note
-      </button>
+    <div className='quiz-section'>
+      <div className='notes'>
+        <div className='quiz-note'>
+          <h2>Question:</h2>
+          <div id='quiz'></div>
+        </div>
+        <Staff currentNote={currentNote} isCorrect={isCorrect} />
+      </div>
+      <div className='answer-section'>
+        <h3>{answer}</h3>
+
+        <button
+          onClick={newNoteHandler}
+          type='button'
+          disabled={currentNote !== quizNote}
+        >
+          New Note
+        </button>
+      </div>
     </div>
   );
 };

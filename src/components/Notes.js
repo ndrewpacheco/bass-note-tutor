@@ -16,7 +16,7 @@ export default function Notes(props) {
                 // onTouchStart={props.handleClick}
                 onMouseDown={props.handleClick}
               >
-                {note}
+                <div className='letter-circle'> {note}</div>
               </div>
             </div>
           </div>

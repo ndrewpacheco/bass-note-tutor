@@ -4,7 +4,7 @@ import Notes from "./Notes";
 
 export default function BassNeck(props) {
   return (
-    <div className='bassNeck'>
+    <div className={`bassNeck $${!props.isFlat && "is-flat"}`}>
       {props.bassStrings.map((bassString, idx) => {
         return (
           <Notes

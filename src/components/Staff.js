@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import findBassClefNote from "../findBassClefNote";
 
-const Staff = ({ currentNote }) => {
+const Staff = ({ currentNote, isCorrect }) => {
   useEffect(() => {
-    findBassClefNote(currentNote, "staff");
+    findBassClefNote(currentNote, "staff", isCorrect);
 
     return () => {
       document.getElementById("staff").innerText = "";
@@ -12,7 +12,7 @@ const Staff = ({ currentNote }) => {
 
   return (
     <div className='quiz-note'>
-      <h2>your note:</h2>
+      <h2>Answer:</h2>
 
       <div id='staff'></div>
     </div>

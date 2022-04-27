@@ -1,12 +1,11 @@
 import Vex from "vexflow";
-import { NoteSubGroup } from "vexflow/src/notesubgroup";
 import "./App.css";
 
-export default function findBassClefNote(letter, id) {
+export default function findBassClefNote(letter, id, isCorrect = false) {
   const VF = Vex.Flow;
   // Create an SVG renderer and attach it to the DIV element named "boo".
   const div = document.getElementById(id);
-  console.log(div);
+
   const renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
 
   // Size our SVG:
@@ -16,7 +15,7 @@ export default function findBassClefNote(letter, id) {
   const context = renderer.getContext();
 
   // Create a stave at position 10, 40 of width 400 on the canvas.
-  const stave = new VF.Stave(0, 0, 100);
+  const stave = new VF.Stave(0, 0, 101);
 
   // Add a clef and time signature.
   stave.addClef("bass");
@@ -33,11 +32,21 @@ export default function findBassClefNote(letter, id) {
       duration: "w",
     });
 
-    console.log(notes);
-
-    if (letter[1] === "#") {
-      notes.addAccidental(0, new VF.Accidental("#"));
+    if (id === "staff") {
+      const color = isCorrect ? "rgb(38, 202, 38)" : "red";
+      notes.setKeyStyle(0, { fillStyle: color });
     }
+    // if (letter[1] === "#") {
+    //   notes.addAccidental(0, new VF.Accidental("#"));
+    // } else if (letter[1] === "b") {
+    //   notes.addAccidental(0, new VF.Accidental("b"));
+    // }
+
+    ["#", "b"].forEach(
+      (accidental) =>
+        letter[1] === accidental &&
+        notes.addAccidental(0, new VF.Accidental(accidental))
+    );
 
     // Create a voice in 4/4 and add the fotes from above
     const voice = new VF.Voice({ num_beats: 4, beat_value: 4 });
