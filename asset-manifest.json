@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/bass-note-tutor/static/css/main.872f8d72.css",
-    "main.js": "/bass-note-tutor/static/js/main.af12917f.js",
+    "main.css": "/bass-note-tutor/static/css/main.a65b45d5.css",
+    "main.js": "/bass-note-tutor/static/js/main.cd769903.js",
     "static/js/787.f3766bc3.chunk.js": "/bass-note-tutor/static/js/787.f3766bc3.chunk.js",
     "static/media/e2.wav": "/bass-note-tutor/static/media/e2.b17abf886cb99eb9f67a.wav",
     "static/media/e3.wav": "/bass-note-tutor/static/media/e3.347249a483ad63e9be37.wav",
     "index.html": "/bass-note-tutor/index.html",
-    "main.872f8d72.css.map": "/bass-note-tutor/static/css/main.872f8d72.css.map",
-    "main.af12917f.js.map": "/bass-note-tutor/static/js/main.af12917f.js.map",
+    "main.a65b45d5.css.map": "/bass-note-tutor/static/css/main.a65b45d5.css.map",
+    "main.cd769903.js.map": "/bass-note-tutor/static/js/main.cd769903.js.map",
     "787.f3766bc3.chunk.js.map": "/bass-note-tutor/static/js/787.f3766bc3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.872f8d72.css",
-    "static/js/main.af12917f.js"
+    "static/css/main.a65b45d5.css",
+    "static/js/main.cd769903.js"
   ]
 }
