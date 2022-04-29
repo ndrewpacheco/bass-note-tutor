@@ -238,9 +238,9 @@ input:checked + .slider:before {
   border-color: #0066cc;
 }
 @media (max-height: 600px) {
-  .title {
+  /* .title {
     display: none;
-  }
+  } */
 
   .quiz-note {
     padding: 0;
