@@ -6,17 +6,20 @@ export default function Notes(props) {
     <div className='string'>
       {props.notes.map((note) => {
         return (
-          <div className='fret'>
+          <div className='fret' key={note}>
             <div
               className={note === lastNote ? "fret-marker nut" : "fret-marker"}
             />
             <div className={`note string-number-${props.stringNumber}`}>
-              <div
-                className='letter'
-                // onTouchStart={props.handleClick}
-                onMouseDown={props.handleClick}
-              >
-                <div className='letter-circle'> {note}</div>
+              <div className='letter' onMouseDown={props.handleClick}>
+                <div
+                  className={`letter-circle ${
+                    props.isFlat ? "is-flat" : "is-sharp"
+                  }`}
+                >
+                  {" "}
+                  {note}
+                </div>
               </div>
             </div>
           </div>

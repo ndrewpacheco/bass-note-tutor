@@ -1,16 +1,17 @@
 import React from "react";
-// import String from "./String";
 import Notes from "./Notes";
 
-export default function BassNeck(props) {
+export default function BassNeck({ isFlat, bassStrings, handleClick }) {
   return (
-    <div className={`bassNeck $${!props.isFlat && "is-flat"}`}>
-      {props.bassStrings.map((bassString, idx) => {
+    <div className='bassNeck'>
+      {bassStrings.map((bassString, idx) => {
         return (
           <Notes
+            key={idx}
             notes={bassString}
             stringNumber={idx + 1}
-            handleClick={props.handleClick}
+            handleClick={handleClick}
+            isFlat={isFlat}
           />
         );
       })}

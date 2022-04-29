@@ -36,11 +36,6 @@ export default function findBassClefNote(letter, id, isCorrect = false) {
       const color = isCorrect ? "rgb(38, 202, 38)" : "red";
       notes.setKeyStyle(0, { fillStyle: color });
     }
-    // if (letter[1] === "#") {
-    //   notes.addAccidental(0, new VF.Accidental("#"));
-    // } else if (letter[1] === "b") {
-    //   notes.addAccidental(0, new VF.Accidental("b"));
-    // }
 
     ["#", "b"].forEach(
       (accidental) =>

@@ -3,7 +3,6 @@
 body {
   font-family: "Lato", sans-serif;
 }
-
 h1,
 h2,
 h3 {
@@ -91,17 +90,18 @@ h3 {
 
 .letter-circle {
   display: inline-block;
-  color: green;
+  color: black;
   font-weight: bold;
-  border: 2px solid green;
+  border: 2px solid black;
   min-width: 32px;
-  /* min-height: 32px; */
+
   padding: 5px 1px;
   border-radius: 100%;
   margin-left: 10px;
 
   background-color: white;
 }
+
 .notes {
   display: flex;
   justify-content: space-evenly;
@@ -152,16 +152,24 @@ h3 {
 
 .accidentals {
   align-self: flex-end;
-  margin: 0.5em 2em;
+  margin: 0.5em;
   font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.accidentals h4 {
+  margin: 0;
 }
 
 /* The switch - the box around the slider */
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 50px;
+  height: 24px;
+
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -180,7 +188,7 @@ h3 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: green;
+  background-color: #0066cc;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -188,21 +196,21 @@ h3 {
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
   background-color: white;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: blueviolet;
+  background-color: purple;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px blueviolet;
+  box-shadow: 0 0 1px purple;
 }
 
 input:checked + .slider:before {
@@ -213,17 +221,22 @@ input:checked + .slider:before {
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+  border-radius: 24px;
 }
 
 .slider.round:before {
   border-radius: 50%;
 }
 
-/* .is-flat {
-  background-color: blueviolet;
-  border-color: blueviolet;
-} */
+.is-sharp {
+  color: purple;
+  border-color: purple;
+}
+
+.is-flat {
+  color: #0066cc;
+  border-color: #0066cc;
+}
 @media (max-height: 600px) {
   .title {
     display: none;

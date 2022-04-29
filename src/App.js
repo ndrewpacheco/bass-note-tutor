@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import BassNeck from "./components/BassNeck";
+import Accidentals from "./components/Accidentals";
+import Quiz from "./components/Quiz";
 import "./App.css";
 
 import { Sampler } from "tone";
 import E2 from "./assets/bass-samples/e3.wav";
 import E1 from "./assets/bass-samples/e2.wav";
-import Quiz from "./components/Quiz";
 
 function App() {
   const bassStrings = [
@@ -21,13 +22,12 @@ function App() {
     ["Gb2", "F2", "E2", "Eb2", "D2"],
     ["B2", "Bb2", "A2", "Ab2", "G2"],
   ];
-  const [isFlat, setIsFlat] = useState(false);
+  const [isFlat, setIsFlat] = useState(true);
 
   const allNotes = [].concat.apply([], isFlat ? flatBassStrings : bassStrings);
 
   const [quizNote, setQuizNote] = useState(
     allNotes[Math.floor(Math.random() * allNotes.length)]
-    // lesson1[Math.floor(Math.random() * lesson1.length)]
   );
 
   const [currentNote, setCurrentNote] = useState("");
@@ -59,6 +59,9 @@ function App() {
     newNoteHandler();
     setCurrentNote("");
   }, [isFlat]);
+
+  const changeAccidental = () => setIsFlat((accidental) => !accidental);
+
   return (
     <div className='wrapper'>
       <h1 className='title'>Note Tutor - Bass Guitar</h1>
@@ -69,29 +72,31 @@ function App() {
         newNoteHandler={newNoteHandler}
         quizNote={quizNote}
       />
-      <div
+
+      <Accidentals
+        // className='accidentals'
+        // onChange={() => setIsFlat((accidental) => !accidental)}
+        isFlat={isFlat}
+        changeAccidental={changeAccidental}
+      />
+      {/* <div
         className='accidentals'
         onChange={() => setIsFlat((accidental) => !accidental)}
       >
-        {/* <input
-          type='radio'
-          id='flat'
-          name='accidentals'
-          value='flat'
-          defaultChecked
-        />
-        <label htmlFor='flat'>Flats</label>
-
-
-
-        <input type='radio' id='sharp' name='accidentals' value='sharp' />
-        <label htmlFor='dewey'>Sharps</label> */}
-        <h4 style={{ display: "inline" }}>Flats / Sharps </h4>
-        <label class='switch'>
+        <h4>
+          <span id='flats' className={isFlat ? "is-flat" : ""}>
+            Flats
+          </span>{" "}
+          /{" "}
+          <span id='sharps' className={!isFlat ? "is-sharp" : ""}>
+            Sharps
+          </span>
+        </h4>
+        <label className='switch '>
           <input type='checkbox' />
-          <span class='slider round'></span>
+          <span className='slider round'></span>
         </label>
-      </div>
+      </div> */}
       <BassNeck
         handleClick={handleClick}
         isFlat={isFlat}
@@ -102,9 +107,3 @@ function App() {
 }
 
 export default App;
-
-// features to add:
-// match keydown on keyboard to notes
-// create lessons & method
-// switch from flats to sharps on neck
-// play along to notes
