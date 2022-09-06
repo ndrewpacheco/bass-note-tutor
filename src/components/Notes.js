@@ -17,7 +17,6 @@ export default function Notes(props) {
                     props.isFlat ? "is-flat" : "is-sharp"
                   }`}
                 >
-                  {" "}
                   {note}
                 </div>
               </div>
