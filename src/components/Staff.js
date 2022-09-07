@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import findBassClefNote from "../findBassClefNote";
 
 const Staff = ({ currentNote, isCorrect }) => {
+  // Determines and displays the answer by the user
   useEffect(() => {
     findBassClefNote(currentNote, "staff", isCorrect);
 
