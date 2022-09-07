@@ -7,9 +7,11 @@ const Quiz = ({ currentNote, quizNote, newNoteHandler }) => {
 
   let answer = "....waiting....";
 
+  // Determines whether the note inputted by the user is correct
   useEffect(() => {
     findBassClefNote(quizNote, "quiz");
     setIsCorrect(currentNote === quizNote);
+
     return () => {
       document.getElementById("quiz").firstChild.remove();
     };
