@@ -21,6 +21,7 @@ export default function findBassClefNote(letter, id, isCorrect = false) {
   // Add a clef and time signature.
   stave.addClef("bass");
 
+  // Formats letter to integrate into VexFlow
   if (letter.length > 0) {
     let num = letter.slice(-1);
     num = parseInt(num) + 1;
@@ -33,11 +34,13 @@ export default function findBassClefNote(letter, id, isCorrect = false) {
       duration: "w",
     });
 
+    // Determines proper  color to display user input
     if (id === "staff") {
       const color = isCorrect ? "rgb(38, 202, 38)" : "red";
       notes.setKeyStyle(0, { fillStyle: color });
     }
 
+    // Determines proper accidental usage
     ["#", "b"].forEach(
       (accidental) =>
         letter[1] === accidental &&

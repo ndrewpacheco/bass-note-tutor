@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import findBassClefNote from "../findBassClefNote";
 import Staff from "./Staff";
+
 const Quiz = ({ currentNote, quizNote, newNoteHandler }) => {
   const [isCorrect, setIsCorrect] = useState(false);
 

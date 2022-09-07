@@ -28,5 +28,9 @@ Once the user determines the correct answer, they are able to move on to another
 - [Tone.js](https://tonejs.github.io/)
 - [VexFlow](https://vexflow.com/)
 
+
+### Live Site URL
+[https://ndrewpacheco.github.io/bass-note-tutor/](https://ndrewpacheco.github.io/bass-note-tutor/)
+
 ### Repo: 
 [https://github.com/ndrewpacheco/bass-note-tutor](https://github.com/ndrewpacheco/bass-note-tutor)
