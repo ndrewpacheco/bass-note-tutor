@@ -85,6 +85,7 @@ function App() {
       />
 
       <Accidentals isFlat={isFlat} changeAccidental={changeAccidental} />
+
       <BassNeck
         handleClick={handleClick}
         isFlat={isFlat}

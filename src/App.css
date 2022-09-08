@@ -3,13 +3,11 @@
 body {
   font-family: "Lato", sans-serif;
 }
-
 h1,
 h2,
 h3 {
   margin: 0.2em 0;
 }
-
 .wrapper {
   height: 100vh;
   max-height: 1000px;
@@ -23,8 +21,6 @@ h3 {
   max-width: 900px;
   min-width: 320px;
 }
-
-/* Bass Neck */
 
 .bassNeck {
   display: grid;
@@ -98,9 +94,11 @@ h3 {
   font-weight: bold;
   border: 2px solid black;
   min-width: 32px;
+
   padding: 5px 1px;
   border-radius: 100%;
   margin-left: 10px;
+
   background-color: white;
 }
 
@@ -108,9 +106,6 @@ h3 {
   display: flex;
   justify-content: space-evenly;
 }
-
-/* Quiz Section */
-
 .quiz-section {
   display: flex;
   flex-direction: column;
@@ -167,7 +162,6 @@ h3 {
 .accidentals h4 {
   margin: 0;
 }
-s
 
 /* The switch - the box around the slider */
 .switch {
@@ -243,8 +237,8 @@ input:checked + .slider:before {
   color: #0066cc;
   border-color: #0066cc;
 }
-
 @media (max-height: 600px) {
+
   .quiz-note {
     padding: 0;
   }
