@@ -5,8 +5,6 @@ import Staff from "./Staff";
 const Quiz = ({ currentNote, quizNote, newNoteHandler }) => {
   const [isCorrect, setIsCorrect] = useState(false);
 
-  let answer = "....waiting....";
-
   // Determines whether the note inputted by the user is correct
   useEffect(() => {
     findBassClefNote(quizNote, "quiz");
@@ -17,6 +15,8 @@ const Quiz = ({ currentNote, quizNote, newNoteHandler }) => {
     };
   }, [quizNote, currentNote]);
 
+  let answer = "....waiting....";
+
   if (currentNote) {
     answer = isCorrect ? (
       <div style={{ color: "green" }}>Correct, it's {currentNote}</div>
@@ -26,20 +26,20 @@ const Quiz = ({ currentNote, quizNote, newNoteHandler }) => {
   }
 
   return (
-    <div className='quiz-section'>
-      <div className='notes'>
-        <div className='quiz-note'>
+    <div className="quiz-section">
+      <div className="notes">
+        <div className="quiz-note">
           <h2>Question:</h2>
-          <div id='quiz'></div>
+          <div id="quiz"></div>
         </div>
         <Staff currentNote={currentNote} isCorrect={isCorrect} />
       </div>
-      <div className='answer-section'>
+      <div className="answer-section">
         <h3>{answer}</h3>
 
         <button
           onClick={newNoteHandler}
-          type='button'
+          type="button"
           disabled={currentNote !== quizNote}
         >
           New Note
