@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/bass-note-tutor/static/css/main.350d4966.css",
-    "main.js": "/bass-note-tutor/static/js/main.3c150ac7.js",
+    "main.js": "/bass-note-tutor/static/js/main.f9f57806.js",
     "static/js/787.f3766bc3.chunk.js": "/bass-note-tutor/static/js/787.f3766bc3.chunk.js",
     "static/media/e2.wav": "/bass-note-tutor/static/media/e2.b17abf886cb99eb9f67a.wav",
     "static/media/e3.wav": "/bass-note-tutor/static/media/e3.347249a483ad63e9be37.wav",
     "index.html": "/bass-note-tutor/index.html",
     "main.350d4966.css.map": "/bass-note-tutor/static/css/main.350d4966.css.map",
-    "main.3c150ac7.js.map": "/bass-note-tutor/static/js/main.3c150ac7.js.map",
+    "main.f9f57806.js.map": "/bass-note-tutor/static/js/main.f9f57806.js.map",
     "787.f3766bc3.chunk.js.map": "/bass-note-tutor/static/js/787.f3766bc3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.350d4966.css",
-    "static/js/main.3c150ac7.js"
+    "static/js/main.f9f57806.js"
   ]
 }
