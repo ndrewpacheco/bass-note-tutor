@@ -4,7 +4,6 @@ import Staff from "./Staff";
 
 const Quiz = ({ currentNote, quizNote, newNoteHandler }) => {
   const [isCorrect, setIsCorrect] = useState(false);
-
   // Determines whether the note inputted by the user is correct
   useEffect(() => {
     findBassClefNote(quizNote, "quiz");

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Notes(props) {
   const lastNote = props.notes[props.notes.length - 1];
-  // Displays all the notes along the BassNeck Instrument
+  // Displays each note along the BassNeck Instrument
   return (
     <div className="string">
       {props.notes.map((note) => {
