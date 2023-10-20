@@ -1,12 +1,9 @@
 # Bass Note Tutor
 
-A [React](https://reactjs.org/) application where music students can learn the notes of a musical staff, using an interactive instrument.
+A [React](https://reactjs.org/) application designed to help music students learn the notes of a musical staff using an interactive instrument. This application leverages the power of third-party libraries, including Tone.js for audio sampling and VexFlow for displaying musical staff.
 
-This application utilizes the third party libraries [Tone.js](https://tonejs.github.io/) for audio sampling and [VexFlow](https://vexflow.com/) for musical staff display.
-
-
-This current app serves as a stepping stone towards  development of a full-stack educational platform. Future goals  for the application involve more user integration, tutorial customization, lesson tracking and data storage. 
-
+## Overview
+Bass Note Tutor is an interactive learning tool that simplifies the process of understanding musical notes on the bass clef. Whether you're a beginner or an experienced musician, this app is here to assist you in grasping the intricacies of bass notes and improving your music theory knowledge. Our future goals for the application include enhancing user integration, providing tutorial customization, lesson tracking, and data storage.
 
 ### Getting Started
 Simply run `npm start` within the project directory to run the application in development mode.
@@ -14,11 +11,17 @@ Simply run `npm start` within the project directory to run the application in de
 For more information, refer to the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 
-### How To Use The Tutor 
+## How to Use the Tutor
 
-The application initially prompts the user with a musical question involving a random note on the bass clef. The user then uses interactive *neck* to choose the correct answer. 
+Bass Note Tutor provides an interactive learning experience. Here's how to make the most of it:
 
-Once the user determines the correct answer, they are able to move on to another question. The user can also change the note format from flats to sharps if desired. 
+1. **Musical Questions**: The application will present you with a musical question involving a random note on the bass clef.
+
+2. **Interactive Neck**: Use the interactive "neck" to choose the correct answer. Click or interact with the notes on the neck to select your answer.
+
+3. **Changing Note Format**: If you prefer, you can change the note format from flats to sharps or vice versa. This allows you to practice both notations.
+
+4. **Progress and Challenges**: After determining the correct answer, you can move on to another question. Track your progress and challenges as you continue to learn and improve your bass clef note knowledge.
 
 
 ### Tools Used
